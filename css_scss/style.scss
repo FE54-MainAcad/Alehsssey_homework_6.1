@@ -1,0 +1,91 @@
+$color_1: #eb2f3f ;
+
+// for paragraph
+$color_2: #5b5b5b;
+
+$ffamily: Arial, Helvetica, sans-serif;
+
+// Centering for blocks
+%centering{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%hspan{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+@mixin padb($pb) {
+    padding-bottom: $pb;
+}
+
+.body{
+    background-color: #fff;
+    padding: 0 300px;
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    >hr{
+        margin-bottom: 80px;
+    }
+    h1{
+        @extend %centering;
+        padding: 50px 0 50px 0;
+        color: $color_1;
+        @extend %hspan;
+        font-size: 20px;
+        text-shadow: 1px 1px 1px rgb(126, 82, 82);
+    }
+    >hr{
+        width: 40px;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        @include padb(20px);
+    }
+    h2{
+        color: black;
+        @extend %hspan;
+        @include padb(10px);
+    }
+    span{
+        color: $color_1;
+        text-transform: uppercase;
+        font-size: 15px;
+        @extend %hspan;
+        @include padb(20px);
+    }
+    li hr{
+        width: 30px;
+        margin-bottom: 20px;
+    }
+    p{
+        text-align: center;
+        font-family: $ffamily;
+        font-size: 14px;
+        color: $color_2;
+        @include padb(40px);
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    li{
+        @extend %centering;
+        flex-direction: column;
+        height: 450px;
+        width: 300px;
+        border: 3px solid #f4f4f6;
+        border-radius: 5px;
+        &:hover{
+            transform: scale(1.2);
+            transition: 1s;
+            box-shadow: 0px 0px 10px 10px rgba(91,91,91,0.2);
+            cursor: pointer;
+        }
+    }
+}
